@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            width: 350px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .controls {
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .start-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .stop-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .export-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .status.idle {
+            background-color: #e7f3ff;
+            color: #1976d2;
+        }
+        .status.running {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status.completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .results {
+            margin-top: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .video-link {
+            padding: 5px;
+            margin: 2px 0;
+            background-color: #f8f9fa;
+            border-radius: 3px;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        .video-link:hover {
+            background-color: #e9ecef;
+        }
+        .stats {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>🎥 Video Link Grabber</h3>
+    </div>
+    
+    <div class="controls">
+        <button id="startBtn" class="start-btn">Start Grabbing Videos</button>
+        <button id="stopBtn" class="stop-btn" style="display:none;">Stop Grabbing</button>
+        <button id="exportBtn" class="export-btn" style="display:none;">Export Links</button>
+    </div>
+    
+    <div id="status" class="status idle">Ready to start</div>
+    
+    <div class="stats">
+        <div>Videos found: <span id="videoCount">0</span></div>
+        <div>Page height: <span id="pageHeight">0</span>px</div>
+    </div>
+    
+    <div id="results" class="results" style="display:none;"></div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

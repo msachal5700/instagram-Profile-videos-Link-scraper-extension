@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Video Link Grabber",
+  "version": "1.0",
+  "description": "Scroll through entire page and grab all video links",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Video Link Grabber"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
